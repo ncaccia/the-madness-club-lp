@@ -1,0 +1,153 @@
+/*--------------------------------------------------------------
+# Header Styles
+--------------------------------------------------------------*/
+.site-header {
+    padding: 15px 0;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px; /* Mobile logo height */
+}
+
+/* Main Navigation Mobile */
+.main-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Full height of header */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.main-nav.nav-active ul {
+    display: flex;
+}
+
+.main-nav li {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.main-nav a {
+    font-family: var(--font-secondary);
+    color: var(--color-text);
+    padding: 10px 15px;
+    text-decoration: underline; /* As per your screenshot */
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: block;
+}
+
+.main-nav a.lang-switcher {
+    border: 1px solid var(--color-text);
+    border-radius: 3px;
+    padding: 5px 8px;
+    display: inline-block; /* To allow border to wrap tightly */
+}
+.main-nav a:hover,
+.main-nav a.active { /* Assuming an active class might be added by JS later */
+    color: var(--color-primary-accent);
+}
+
+/* Hamburger Menu Toggle */
+.nav-toggle {
+    display: block; /* Show hamburger on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-family: var(--font-secondary); /* Match nav link font */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: underline; /* Match nav link style */
+    color: var(--color-text);
+}
+/* Hide actual hamburger span if text "MENU" is used */
+.hamburger { display: none; } 
+
+/* If you want the three-line hamburger instead of "MENU" text:
+.nav-toggle { font-size: 0; } // Hide text
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text);
+    left: 0;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+.nav-active .hamburger { background-color: transparent; }
+.nav-active .hamburger::before { transform: rotate(45deg); top: 0; }
+.nav-active .hamburger::after { transform: rotate(-45deg); top: 0; }
+*/
+.nav-toggle::after {
+    content: 'menu'; /* For the mobile design */
+}
+.nav-active .nav-toggle::after {
+    content: 'cerrar';
+}
+
+
+/* Header Responsive */
+@media (min-width: 768px) {
+    .logo img {
+        height: 40px; /* Desktop logo height */
+    }
+    .nav-toggle {
+        display: none; /* Hide hamburger/text toggle on desktop */
+    }
+    .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        border-top: none;
+        padding: 0;
+        box-shadow: none;
+    }
+    .main-nav li {
+        margin: 0 0 0 15px; /* Spacing between desktop nav items */
+    }
+     .main-nav li:first-child {
+        margin-left: 0;
+    }
+    .main-nav a {
+        padding: 5px 0; /* Adjust padding for horizontal nav */
+        display: inline; /* Back to inline for desktop */
+    }
+    .main-nav a.lang-switcher {
+        margin-left: 20px;
+    }
+}
+@media (min-width: 992px) {
+    .main-nav li { margin: 0 0 0 20px; }
+    .main-nav a.lang-switcher { margin-left: 25px; }
+}

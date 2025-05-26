@@ -1,0 +1,66 @@
+/*--------------------------------------------------------------
+# Locura Section Styles
+--------------------------------------------------------------*/
+.locura-section {
+    padding: var(--section-padding-vertical) 0;
+    background-color: var(--color-primary-accent);
+    text-align: center;
+    /* overflow: hidden; */
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.locura-section h3 {
+    padding: 20px 30px 20px 30px;
+    font-style: italic;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-decoration: none;
+    color: var(--color-background);
+    text-wrap: balance
+}
+
+.locura-text {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--color-background);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3.5px;
+}
+
+.unete-club-block {
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: var(--color-text);
+    font-weight: 600;
+    font-style: normal;
+}
+
+.unete-club-line {
+    position: absolute;
+    z-index: -1;
+    top: 20%;
+    left: 15%;
+    width: auto;
+    max-height: clamp(20px, 4vw, 30px);
+    /* Responsive sizing */
+}
+
+/* Section Transition Arrow */
+.section-transition-arrow {
+    text-align: center;
+    position: absolute;
+    bottom: -10%;
+    left: 45%;
+    /* transform: rotate(15deg); */
+}
+
+.section-transition-arrow img {
+    width: 40px;
+    display: inline-block
+}

@@ -1,0 +1,60 @@
+/*--------------------------------------------------------------
+# MARK: QUIEN SOY
+--------------------------------------------------------------*/
+
+.quien-soy-section {
+    padding: 20px 15px;
+    position: relative;
+}
+
+.quien-soy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quien-soy-img {
+    margin: auto;
+    max-width: 220px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quien-soy-text {
+    padding-top: 15px;
+}
+
+.quien-soy-text:last-child p {
+    padding-top: 15px;
+}
+
+.quien-soy-text>p {
+    padding-top: 15px;
+}
+
+.cta-link {
+    padding-top: 15px;
+    display: inline-block;
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+/* CTA END */
+
+.cta-end-wrapper {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    /* padding-top: 10px; */
+}
+
+.cta-end-arrow {
+    width: 100px;
+    display: flex;
+    transform: translate(100px, -60px) rotate(-15deg);
+    align-items: center;
+    justify-content: center;
+}

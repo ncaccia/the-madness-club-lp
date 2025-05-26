@@ -1,0 +1,106 @@
+/*--------------------------------------------------------------
+# Mi Metodo Section Styles
+--------------------------------------------------------------*/
+.mi-metodo-section {
+    padding: 60px var(--container-padding-mobile, 15px) 0 var(--container-padding-mobile, 15px);
+    background-color: var(--color-background);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metodo-intro {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.metodo-ilu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns-mobile), minmax(0, 1fr));
+    grid-template-rows: repeat(24, minmax(0, 1fr));
+    height: 90vh;
+}
+
+.metodo-texto-1 {
+    grid-area: 1 / 4 / 3 / 11;
+    font-size: 1.25rem;
+    line-height: 1.3rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.metodo-texto-2 {
+    grid-area: 4 / 2 / 7 / 11;
+    text-align: left;
+    z-index: 10;
+    text-wrap: balance;
+    line-height: 1.2rem;
+    font-style: italic;
+}
+
+.metodo-mesa {
+    grid-area: 5 / 2 / 16 / 14;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metodo-texto-3 {
+    grid-area: 16 / 4 / 19 / 13;
+    z-index: 10;
+    text-align: right;
+    text-wrap: balance;
+    line-height: 1.2rem;
+    font-style: italic;
+}
+
+.metodo-texto-4 {
+    grid-area: 20 / 2 / 24 / 13;
+    text-align: left;
+    text-wrap: balance;
+    line-height: 1.2rem;
+    font-style: italic;
+}
+
+.metodo-flecha-1 {
+    grid-area: 6 / 4 / 9 / 6;
+    transform: rotate(20deg);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metodo-flecha-2 {
+    grid-area: 14 / 12 / 16 / 13;
+    transform: rotate(15deg);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metodo-flecha-3 {
+    grid-area: 15 / 3 / 20 / 4;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.curly-arrow-metodo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    transform: rotate(-10deg);
+}

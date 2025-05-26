@@ -1,0 +1,127 @@
+/*--------------------------------------------------------------
+# Resultados Section Styles
+--------------------------------------------------------------*/
+.resultados-section {
+    padding: var(--section-padding-vertical) 0;
+    background-color: var(--color-background);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.resultados-container {
+    /* padding: var(--container-padding-mobile, 15px); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultados-wrapper {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultado-item {
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultado-item img {
+    width: auto;
+    height: 100px;
+}
+
+.resultado-item p {
+    max-width: 290px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: var(--spacing-lg);
+    margin-top: var(--spacing-xs);
+    text-align: center;
+    text-wrap: balance;
+}
+
+.resultado-item:nth-child(odd) p {
+    color: var(--color-primary-accent);
+}
+
+.resultado-item:nth-child(even) p {
+    color: var(--color-text);
+}
+
+/*--------------------------------------------------------------
+# MARK: > Img scroll anim
+--------------------------------------------------------------*/
+
+.team-carousel-wrapper {
+    margin: 40px;
+    padding: 20px 0;
+    background-color: var(--color-secondary-accent);
+    transform: rotate(10deg);
+}
+
+.team-images-carousel {
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Fade edges for polish */
+.team-images-carousel::before,
+.team-images-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.team-images-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-background) 30%, transparent);
+}
+
+.team-images-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-background) 30%, transparent);
+}
+
+.team-images-track {
+    display: flex;
+    gap: 15px;
+    animation: smoothScroll 50s linear infinite;
+}
+
+.team-images-track img {
+    opacity: 0.9;
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover */
+.team-images-carousel:hover .team-images-track {
+    animation-play-state: paused;
+}

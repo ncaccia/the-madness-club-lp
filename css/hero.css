@@ -1,0 +1,481 @@
+/*--------------------------------------------------------------
+# Hero Section Styles
+--------------------------------------------------------------*/
+.hero-section {
+    /* Use var from base.css if defined, or explicit values */
+    padding: 40px var(--container-padding-mobile, 15px) 0 var(--container-padding-mobile, 15px);
+    background-color: var(--color-background);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 90vh;
+}
+
+/* MARK: > Titles
+*/
+
+.hero-text-content {
+    max-width: 500px;
+    /* Mobile text width */
+    margin-top: calc(15vh);
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 10% auto; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+
+}
+
+.hero-text-content h1 {
+    width: 180px;
+    font-family: var(--font-primary);
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+
+    /* Mobile H1 */
+    /* margin-top: 1.3em; */
+    margin-bottom: 0.4em;
+    font-weight: 800;
+    line-height: 1.25;
+    text-wrap: balance
+}
+
+.mobile-break {
+    display: block;
+}
+
+.hero-text-content h2 {
+    font-family: var(--font-primary);
+    width: 190px;
+    font-size: 0.95rem;
+    /* Mobile H2 */
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-text-light);
+}
+
+.hero-text-content h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.25rem;
+    /* Mobile H3 */
+    line-height: 1.45;
+    font-weight: 500;
+    margin-bottom: 1em;
+    color: var(--color-text);
+}
+
+.curly-arrow-cta {
+    width: 65px;
+    position: absolute;
+    top: 57%;
+    right: 10%;
+    transform: rotate(-7deg);
+}
+
+.hero-text-content .cta-button {
+    margin-top: 0px;
+    background-color: -var(--color-background);
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.disclaimer {
+    font-family: var(--font-secondary);
+    font-size: 0.7rem;
+    color: var(--color-text-lightest);
+    margin-top: 0.6em;
+    font-style: italic;
+}
+
+/* MARK: > img collage
+*/
+.hero-img {
+    position: absolute;
+    border-radius: 6px;
+    /* Slightly smaller radius for mobile */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    object-fit: cover;
+    z-index: 2;
+    /* Behind text */
+}
+
+.hero-img-people {
+    width: 60vw;
+    max-width: 120px;
+    top: 3%;
+    left: -2%;
+    transform: rotate(10deg);
+}
+
+.hero-img-mickey {
+    width: 30vw;
+    max-width: 110px;
+    top: 27%;
+    left: -5%;
+    /* vh to position relative to screen height */
+    transform: rotate(-8deg);
+}
+
+.hero-img-horses {
+    /* Accordion players */
+    width: 33vw;
+    max-width: 120px;
+    top: 58%;
+    left: -8%;
+    transform: rotate(10deg);
+}
+
+.hero-img-smiley {
+    width: 30vw;
+    max-width: 105px;
+    top: 3vh;
+    right: 1.5%;
+    transform: rotate(-8deg);
+}
+
+.hero-img-bluemural {
+    width: 28vw;
+    max-width: 100px;
+    top: 22%;
+    right: -4%;
+    transform: rotate(10deg);
+}
+
+.hero-img-cyclist {
+    width: 28vw;
+    max-width: 100px;
+    top: 55%;
+    right: -4%;
+    transform: rotate(-10deg);
+}
+
+
+/* MARK: > brands scroller
+*/
+.hero-brands-scroller-wrapper {
+    width: 100%;
+    /* Reduced margin for mobile */
+    padding: 15px 0;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-brands-scroller-wrapper h6 {
+    font-style: italic;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.hero-brands-scroller {
+    max-width: var(--container-max-width, 1140px);
+    /* Use variable if defined elsewhere */
+    margin: 0 auto;
+    padding: 0 var(--container-padding-mobile, 15px);
+    /* Match container padding */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-brands-scroller span {
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    margin-right: 10px;
+    /* Reduced margin */
+    font-size: 0.8rem;
+    color: var(--color-text-lighter);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.logos-track {
+    display: flex;
+    align-items: center;
+    animation: scrollLogos 25s linear infinite;
+    /* Faster scroll on mobile */
+}
+
+.logos-track img {
+    height: auto;
+    max-width: 90px;
+    max-height: 50px;
+    margin-right: 20px;
+    opacity: 0.65;
+    flex-shrink: 0;
+}
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hero-brands-scroller-wrapper::before,
+.hero-brands-scroller-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    /* Narrower fade on mobile */
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-brands-scroller-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-background) 5%, transparent);
+}
+
+.hero-brands-scroller-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-background) 5%, transparent);
+}
+
+
+/* MARK: RESPONSIVE
+*/
+
+@media (min-width: 768px) {
+
+    /* MARK: > 768px tablet
+    */
+    .hero-section {
+        padding: 60px var(--container-padding-desktop, 30px) 0 var(--container-padding-desktop, 30px);
+        min-height: 75vh;
+    }
+
+    .hero-text-content {
+        max-width: 580px;
+        margin-top: 3vh;
+        margin-bottom: 40px;
+    }
+
+    .mobile-break {
+        display: none;
+    }
+
+    .hero-text-content h3 {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .unete-club-block {
+        display: inline-block;
+        margin-left: 0.3em;
+        margin-top: 0;
+    }
+
+    .unete-club-line {
+        max-height: 28px;
+        bottom: -6px;
+    }
+
+    .hero-text-content h1 {
+        width: 500px;
+        font-size: 2.8rem;
+        margin-top: 0.8em;
+        line-height: 1.2;
+    }
+
+    .hero-text-content h2 {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5em;
+    }
+
+    .curly-arrow-cta {
+        margin: -5px auto 8px auto;
+        width: 65px;
+    }
+
+    .hero-text-content .cta-button {
+        padding: 12px 22px;
+        font-size: 0.95rem;
+    }
+
+    .disclaimer {
+        font-size: 0.8rem;
+        margin-top: 0.8em;
+    }
+
+    /* DESKTOP IMAGE POSITIONS (tweak with dev tools) */
+    .hero-img {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-img-rapha {
+        width: 170px;
+        top: 8vh;
+        left: 12vw;
+        transform: rotate(-10deg);
+    }
+
+    .hero-img-cowmask {
+        width: 190px;
+        top: 25vh;
+        left: 8vw;
+        transform: rotate(-15deg);
+    }
+
+    .hero-img-accordion {
+        width: 220px;
+        top: 55vh;
+        left: 10vw;
+        transform: rotate(8deg);
+    }
+
+    .hero-img-smiley {
+        width: 160px;
+        top: 10vh;
+        right: 14vw;
+        transform: rotate(12deg);
+    }
+
+    .hero-img-bluemural {
+        width: 200px;
+        top: 20vh;
+        right: 5vw;
+        transform: rotate(10deg);
+    }
+
+    .hero-img-cafe {
+        /* For the 6th image if present on desktop */
+        display: block;
+        /* Show on desktop */
+        width: 230px;
+        top: 50vh;
+        right: 8vw;
+        transform: rotate(-5deg);
+    }
+
+    .hero-brands-scroller-wrapper {
+        margin-top: 60px;
+        padding: 20px 0;
+    }
+
+    .hero-brands-scroller-wrapper::before,
+    .hero-brands-scroller-wrapper::after {
+        width: 60px;
+    }
+
+    .hero-brands-scroller span {
+        font-size: 0.85rem;
+        margin-right: 15px;
+    }
+
+    .logos-track {
+        animation-duration: 40s;
+    }
+
+    /* Slower scroll for desktop */
+    .logos-track img {
+        height: 25px;
+        margin-right: 25px;
+    }
+
+    .section-transition-arrow {
+        padding: 25px 0 35px 0;
+    }
+
+    .section-transition-arrow img {
+        width: 50px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* MARK: > 1024px desktop
+    */
+    .hero-section {
+        min-height: 85vh;
+    }
+
+    .hero-text-content {
+        max-width: 620px;
+        margin-top: 6vh;
+    }
+
+    .hero-text-content h1 {
+        width: 620px;
+        font-size: 3.2rem;
+    }
+
+    .hero-text-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-img-rapha {
+        width: 190px;
+        top: 10vh;
+        left: 15vw;
+    }
+
+    .hero-img-cowmask {
+        width: 210px;
+        top: 30vh;
+        left: 10vw;
+    }
+
+    .hero-img-accordion {
+        width: 250px;
+        top: 60vh;
+        left: 12vw;
+    }
+
+    .hero-img-smiley {
+        width: 180px;
+        top: 12vh;
+        right: 18vw;
+    }
+
+    .hero-img-bluemural {
+        width: 220px;
+        top: 28vh;
+        right: 8vw;
+    }
+
+    .hero-img-cafe {
+        width: 250px;
+        top: 58vh;
+        right: 10vw;
+    }
+
+    .logos-track img {
+        height: 28px;
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    /* MARK: > 1200px Larger
+    */
+    .hero-section {
+        min-height: 90vh;
+    }
+
+    /* Ensure enough space for spread */
+    .hero-text-content {
+        max-width: 650px;
+    }
+
+    .hero-text-content h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Max H1 size */
+
+    /* Final tweaks for largest screens if needed */
+}

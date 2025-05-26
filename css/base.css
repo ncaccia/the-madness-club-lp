@@ -1,0 +1,162 @@
+/*--------------------------------------------------------------
+# Base Styles & Variables
+--------------------------------------------------------------*/
+:root {
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Roboto Mono', monospace;
+
+    --color-background: #FBF4EC;
+    --color-text: #1a1a1a;
+    --color-text-light: #333;
+    --color-text-lighter: #555;
+    --color-text-lightest: #777;
+
+    --color-primary-accent: #F98457;
+    /* Main orange/salmon */
+    --color-primary-accent-darker: #e06040;
+    --color-secondary-accent: #4383EF;
+    /* Blue for some links */
+    --color-secondary-accent-darker: #3a7bc2;
+    --color-secondary-tertiary: #3C8669;
+    --color-secondary-tertiary-darker: #215943;
+
+
+    --color-border: #e0e0e0;
+    --color-white: #fff;
+    --color-black: #000;
+
+    --container-padding-mobile: 0 15px;
+    --container-padding-tablet: 30px;
+    --container-padding-desktop: 40px;
+    --section-padding-vertical: 20px;
+    /* Default vertical padding for sections */
+
+    /* Responsive grid system variables for consistency */
+    --grid-columns-mobile: 13;
+    --grid-columns-tablet: 18;
+    --grid-columns-desktop: 24;
+    --grid-columns-large: 30;
+
+    /* Responsive spacing system that scales with your design */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.4rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    /* Base font size */
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--color-background);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-accent-darker);
+}
+
+/* Basic Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+/* Base size, can be overridden per component */
+h2 {
+    font-size: 1.8rem;
+
+}
+
+h3 {
+    font-family: var(--font-secondary);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+
+/* Utility Classes*/
+.text-center {
+    text-align: center;
+}
+
+/* Components Classes */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary-accent);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary-accent-darker);
+    color: var(--color-white);
+}
+
+.cta-button.cta-secondary {
+    background-color: transparent;
+    color: var(--color-primary-accent);
+    border: 2px solid var(--color-primary-accent);
+}
+
+.cta-button.cta-secondary:hover {
+    background-color: var(--color-primary-accent);
+    color: var(--color-white);
+}
