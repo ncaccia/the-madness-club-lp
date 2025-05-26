@@ -35,7 +35,7 @@
 
 .resultado-item img {
     width: auto;
-    height: 100px;
+    height: 80px;
 }
 
 .resultado-item p {
@@ -61,10 +61,11 @@
 --------------------------------------------------------------*/
 
 .team-carousel-wrapper {
-    margin: 40px;
+    margin: 40px 0;
     padding: 20px 0;
     background-color: var(--color-secondary-accent);
     transform: rotate(10deg);
+    overflow: hidden;
 }
 
 .team-images-carousel {
@@ -124,4 +125,17 @@
 /* Pause on hover */
 .team-images-carousel:hover .team-images-track {
     animation-play-state: paused;
+}
+
+/*
+MARK: > Media Queries
+*/
+@media (min-width: 768px) {
+    .resultados-wrapper {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        align-items: start;
+    }
 }

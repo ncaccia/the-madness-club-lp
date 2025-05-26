@@ -20,7 +20,6 @@
     --color-secondary-tertiary: #3C8669;
     --color-secondary-tertiary-darker: #215943;
 
-
     --color-border: #e0e0e0;
     --color-white: #fff;
     --color-black: #000;
@@ -36,6 +35,17 @@
     --grid-columns-tablet: 18;
     --grid-columns-desktop: 24;
     --grid-columns-large: 30;
+
+    /* Add fluid typography scale */
+    --font-size-h1: clamp(1.8rem, 4vw, 3.5rem);
+    --font-size-h2: clamp(1.1rem, 2.5vw, 1.8rem);
+    --font-size-h3: clamp(1.25rem, 3vw, 2rem);
+
+    /* Standardize breakpoints */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
 
     /* Responsive spacing system that scales with your design */
     --spacing-xs: 0.25rem;

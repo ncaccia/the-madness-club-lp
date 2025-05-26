@@ -32,7 +32,8 @@
 .hero-text-content h1 {
     width: 180px;
     font-family: var(--font-primary);
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-size: var(--font-size-h1);
+
 
     /* Mobile H1 */
     /* margin-top: 1.3em; */
@@ -49,8 +50,7 @@
 .hero-text-content h2 {
     font-family: var(--font-primary);
     width: 190px;
-    font-size: 0.95rem;
-    /* Mobile H2 */
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
     margin-bottom: 1em;
     font-weight: 400;
     line-height: 1.5;
