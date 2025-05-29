@@ -1,46 +1,39 @@
 /*--------------------------------------------------------------
-# Hero Section Styles
+# Hero Section Styles - Updated
 --------------------------------------------------------------*/
 .hero-section {
-    /* Use var from base.css if defined, or explicit values */
-    padding: 40px var(--container-padding-mobile, 15px) 0 var(--container-padding-mobile, 15px);
+    /* Mobile container padding */
+    padding: var(--container-padding-mobile) var(--section-padding-vertical);
+    margin-bottom: 15px;
     background-color: var(--color-background);
     text-align: center;
     position: relative;
     overflow: hidden;
-    min-height: 90vh;
+    min-height: 87vh;
 }
 
-/* MARK: > Titles
-*/
-
+/* MARK: > Titles */
 .hero-text-content {
     max-width: 500px;
-    /* Mobile text width */
-    margin-top: calc(15vh);
+    margin-top: 10vh;
     margin-left: auto;
     margin-right: auto;
-    /* margin: 10% auto; */
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 10;
-
 }
 
 .hero-text-content h1 {
     width: 180px;
     font-family: var(--font-primary);
     font-size: var(--font-size-h1);
-
-
-    /* Mobile H1 */
-    /* margin-top: 1.3em; */
+    /* Now fluid */
     margin-bottom: 0.4em;
     font-weight: 800;
     line-height: 1.25;
-    text-wrap: balance
+    text-wrap: balance;
 }
 
 .mobile-break {
@@ -51,6 +44,7 @@
     font-family: var(--font-primary);
     width: 190px;
     font-size: clamp(0.95rem, 2vw, 1.2rem);
+    /* Fluid */
     margin-bottom: 1em;
     font-weight: 400;
     line-height: 1.5;
@@ -59,8 +53,8 @@
 
 .hero-text-content h3 {
     font-family: var(--font-secondary);
-    font-size: 1.25rem;
-    /* Mobile H3 */
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    /* Fluid */
     line-height: 1.45;
     font-weight: 500;
     margin-bottom: 1em;
@@ -68,97 +62,97 @@
 }
 
 .curly-arrow-cta {
-    width: 65px;
+    width: clamp(55px, 10vw, 75px);
     position: absolute;
-    top: 57%;
+    top: 60%;
     right: 10%;
     transform: rotate(-7deg);
 }
 
 .hero-text-content .cta-button {
     margin-top: 0px;
-    background-color: -var(--color-background);
+    background-color: var(--color-primary-accent);
     padding: 10px 18px;
-    font-size: 0.85rem;
+    font-size: var(--font-size-small);
     font-weight: 700;
 }
 
 .disclaimer {
     font-family: var(--font-secondary);
-    font-size: 0.7rem;
+    font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+    /* Fluid */
     color: var(--color-text-lightest);
     margin-top: 0.6em;
     font-style: italic;
 }
 
-/* MARK: > img collage
-*/
+/* MARK: > img collage - Preserve overlay behavior */
 .hero-img {
     position: absolute;
     border-radius: 6px;
-    /* Slightly smaller radius for mobile */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     object-fit: cover;
     z-index: 2;
-    /* Behind text */
 }
 
+/* Mobile: Images overlay screen edges */
 .hero-img-people {
     width: 60vw;
-    max-width: 120px;
+    width: 120px;
     top: 3%;
     left: -2%;
+    /* Overlay left edge */
     transform: rotate(10deg);
 }
 
 .hero-img-mickey {
     width: 30vw;
-    max-width: 110px;
+    width: 110px;
     top: 27%;
     left: -5%;
-    /* vh to position relative to screen height */
+    /* Overlay left edge */
     transform: rotate(-8deg);
 }
 
 .hero-img-horses {
-    /* Accordion players */
     width: 33vw;
-    max-width: 120px;
+    width: 120px;
     top: 58%;
     left: -8%;
+    /* Overlay left edge */
     transform: rotate(10deg);
 }
 
 .hero-img-smiley {
     width: 30vw;
-    max-width: 105px;
+    width: 105px;
     top: 3vh;
     right: 1.5%;
+    /* Overlay right edge */
     transform: rotate(-8deg);
 }
 
 .hero-img-bluemural {
     width: 28vw;
-    max-width: 100px;
+    width: 100px;
     top: 22%;
     right: -4%;
+    /* Overlay right edge */
     transform: rotate(10deg);
 }
 
 .hero-img-cyclist {
     width: 28vw;
-    max-width: 100px;
+    width: 100px;
     top: 55%;
     right: -4%;
+    /* Overlay right edge */
     transform: rotate(-10deg);
 }
 
-
-/* MARK: > brands scroller
-*/
+/* MARK: > brands scroller */
 .hero-brands-scroller-wrapper {
     width: 100%;
-    /* Reduced margin for mobile */
     padding: 15px 0;
     position: absolute;
     bottom: 0%;
@@ -170,14 +164,13 @@
     font-style: italic;
     opacity: 0.7;
     margin-bottom: 10px;
+    font-size: var(--font-size-small);
 }
 
 .hero-brands-scroller {
-    max-width: var(--container-max-width, 1140px);
-    /* Use variable if defined elsewhere */
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 var(--container-padding-mobile, 15px);
-    /* Match container padding */
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -187,8 +180,7 @@
     font-family: var(--font-secondary);
     font-weight: 500;
     margin-right: 10px;
-    /* Reduced margin */
-    font-size: 0.8rem;
+    font-size: var(--font-size-small);
     color: var(--color-text-lighter);
     white-space: nowrap;
     flex-shrink: 0;
@@ -197,17 +189,18 @@
 .logos-track {
     display: flex;
     align-items: center;
-    animation: scrollLogos 25s linear infinite;
-    /* Faster scroll on mobile */
+    animation: scrollLogos 100s linear infinite;
 }
 
 .logos-track img {
-    height: auto;
-    max-width: 90px;
+    width: 60px;
     max-height: 50px;
-    margin-right: 20px;
-    opacity: 0.65;
-    flex-shrink: 0;
+    opacity: 0.7;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes scrollLogos {
@@ -227,7 +220,6 @@
     top: 0;
     bottom: 0;
     width: 40px;
-    /* Narrower fade on mobile */
     z-index: 2;
     pointer-events: none;
 }
@@ -242,121 +234,89 @@
     background: linear-gradient(to left, var(--color-background) 5%, transparent);
 }
 
-
-/* MARK: RESPONSIVE
-*/
-
+/* RESPONSIVE - Standardized breakpoints */
+/* MARK: > Tablet 768px */
 @media (min-width: 768px) {
-
-    /* MARK: > 768px tablet
-    */
     .hero-section {
-        padding: 60px var(--container-padding-desktop, 30px) 0 var(--container-padding-desktop, 30px);
-        min-height: 75vh;
+        /* Larger screens: add padding, images grow */
+        padding: var(--container-padding-tablet) var(--section-padding-vertical);
+        margin-top: 60px;
+        margin-bottom: 40px;
+        min-height: 85vh;
     }
 
     .hero-text-content {
         max-width: 580px;
-        margin-top: 3vh;
+        margin-top: 18vh;
         margin-bottom: 40px;
+    }
+
+    .hero-text-content h1 {
+        width: 500px;
+        line-height: 1.2;
+    }
+
+    .hero-text-content h2 {
+        width: 320px;
+        line-height: 1.6;
+        margin-bottom: 1.5em;
     }
 
     .mobile-break {
         display: none;
     }
 
-    .hero-text-content h3 {
-        font-size: 1.5rem;
-        line-height: 1.5;
-    }
-
-    .unete-club-block {
-        display: inline-block;
-        margin-left: 0.3em;
-        margin-top: 0;
-    }
-
-    .unete-club-line {
-        max-height: 28px;
-        bottom: -6px;
-    }
-
-    .hero-text-content h1 {
-        width: 500px;
-        font-size: 2.8rem;
-        margin-top: 0.8em;
-        line-height: 1.2;
-    }
-
-    .hero-text-content h2 {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin-bottom: 1.5em;
-    }
-
-    .curly-arrow-cta {
-        margin: -5px auto 8px auto;
-        width: 65px;
-    }
-
-    .hero-text-content .cta-button {
-        padding: 12px 22px;
-        font-size: 0.95rem;
-    }
-
-    .disclaimer {
-        font-size: 0.8rem;
-        margin-top: 0.8em;
-    }
-
-    /* DESKTOP IMAGE POSITIONS (tweak with dev tools) */
+    /* Images grow and respect padding on larger screens */
     .hero-img {
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .hero-img-rapha {
-        width: 170px;
-        top: 8vh;
-        left: 12vw;
+    .hero-img-people {
+        width: 150px;
+        top: 2vh;
+        left: 8vw;
+        /* Respect padding */
         transform: rotate(-10deg);
     }
 
-    .hero-img-cowmask {
-        width: 190px;
-        top: 25vh;
-        left: 8vw;
+    .hero-img-mickey {
+        width: 150px;
+        top: 20vh;
+        left: 5vw;
+        /* Respect padding */
         transform: rotate(-15deg);
     }
 
-    .hero-img-accordion {
-        width: 220px;
-        top: 55vh;
-        left: 10vw;
+    .hero-img-horses {
+        width: 160px;
+        top: 43vh;
+        left: 7vw;
+        /* Respect padding */
         transform: rotate(8deg);
     }
 
     .hero-img-smiley {
-        width: 160px;
-        top: 10vh;
-        right: 14vw;
+        width: 150px;
+        top: 2vh;
+        right: 10vw;
+        /* Respect padding */
         transform: rotate(12deg);
     }
 
     .hero-img-bluemural {
-        width: 200px;
-        top: 20vh;
+        width: 160px;
+        top: 15vh;
         right: 5vw;
+        /* Respect padding */
         transform: rotate(10deg);
     }
 
-    .hero-img-cafe {
-        /* For the 6th image if present on desktop */
-        display: block;
-        /* Show on desktop */
-        width: 230px;
-        top: 50vh;
+    .hero-img-cyclist {
+        width: 130px;
+        top: 40vh;
         right: 8vw;
+        /* Respect padding */
         transform: rotate(-5deg);
     }
 
@@ -365,117 +325,106 @@
         padding: 20px 0;
     }
 
-    .hero-brands-scroller-wrapper::before,
-    .hero-brands-scroller-wrapper::after {
-        width: 60px;
+    .hero-brands-scroller {
+        padding: 0 var(--container-padding-tablet, 30px);
+    }
+
+    .hero-brands-scroller-wrapper h6 {
+        margin-bottom: 25px;
     }
 
     .hero-brands-scroller span {
-        font-size: 0.85rem;
         margin-right: 15px;
     }
 
     .logos-track {
-        animation-duration: 40s;
+        animation-duration: 100s;
     }
 
-    /* Slower scroll for desktop */
     .logos-track img {
-        height: 25px;
+        width: 80px;
+        max-height: 60px;
+        opacity: 0.7;
         margin-right: 25px;
-    }
-
-    .section-transition-arrow {
-        padding: 25px 0 35px 0;
-    }
-
-    .section-transition-arrow img {
-        width: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
+/* MARK: > Desktop 1024px */
 @media (min-width: 1024px) {
-
-    /* MARK: > 1024px desktop
-    */
     .hero-section {
+        padding: 60px var(--container-padding-desktop, 40px) 0 var(--container-padding-desktop, 40px);
         min-height: 85vh;
     }
 
     .hero-text-content {
         max-width: 620px;
-        margin-top: 6vh;
+        margin-top: 13vh;
     }
 
     .hero-text-content h1 {
         width: 620px;
-        font-size: 3.2rem;
     }
 
     .hero-text-content h2 {
-        font-size: 1.2rem;
+        width: 450px;
+        line-height: 1.6;
+        margin-bottom: 1.5em;
     }
 
-    .hero-img-rapha {
-        width: 190px;
-        top: 10vh;
-        left: 15vw;
-    }
 
-    .hero-img-cowmask {
-        width: 210px;
-        top: 30vh;
+    .hero-img-people {
+        width: 170px;
+        top: 3vh;
         left: 10vw;
     }
 
-    .hero-img-accordion {
-        width: 250px;
-        top: 60vh;
-        left: 12vw;
+    .hero-img-mickey {
+        width: 200px;
+        top: 20vh;
+        left: 8vw;
+    }
+
+    .hero-img-horses {
+        width: 200px;
+        top: 45vh;
+        left: 10vw;
     }
 
     .hero-img-smiley {
-        width: 180px;
-        top: 12vh;
-        right: 18vw;
+        width: 210px;
+        top: 3vh;
+        right: 5vw;
     }
 
     .hero-img-bluemural {
-        width: 220px;
-        top: 28vh;
-        right: 8vw;
+        width: 180px;
+        top: 25vh;
+        right: 5vw;
     }
 
-    .hero-img-cafe {
-        width: 250px;
-        top: 58vh;
-        right: 10vw;
+    .hero-img-cyclist {
+        width: 120px;
+        top: 45vh;
+        right: 15vw;
+        transform: rotate(-25deg);
     }
 
-    .logos-track img {
-        height: 28px;
-        margin-right: 30px;
+    .hero-brands-scroller {
+        padding: 0 var(--container-padding-desktop, 40px);
     }
 }
 
+/* MARK: > Big Screens 1200px */
 @media (min-width: 1200px) {
-
-    /* MARK: > 1200px Larger
-    */
     .hero-section {
-        min-height: 90vh;
+        min-height: 87vh;
     }
 
-    /* Ensure enough space for spread */
     .hero-text-content {
         max-width: 650px;
     }
-
-    .hero-text-content h1 {
-        font-size: 3.5rem;
-    }
-
-    /* Max H1 size */
-
-    /* Final tweaks for largest screens if needed */
 }

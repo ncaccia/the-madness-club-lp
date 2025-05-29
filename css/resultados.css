@@ -2,20 +2,20 @@
 # Resultados Section Styles
 --------------------------------------------------------------*/
 .resultados-section {
-    padding: var(--section-padding-vertical) 0;
+    padding: 0 var(--container-padding-mobile);
     background-color: var(--color-background);
-    text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow-x: clip;
 }
 
 .resultados-container {
-    /* padding: var(--container-padding-mobile, 15px); */
+    padding: var(--section-padding-vertical) 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -61,15 +61,14 @@
 --------------------------------------------------------------*/
 
 .team-carousel-wrapper {
+    z-index: 10;
     margin: 40px 0;
     padding: 20px 0;
     background-color: var(--color-secondary-accent);
-    transform: rotate(10deg);
-    overflow: hidden;
+    transform: rotate(10deg) translateY(20px);
 }
 
 .team-images-carousel {
-    overflow: hidden;
     padding: 20px 0;
     position: relative;
 }
@@ -127,15 +126,47 @@
     animation-play-state: paused;
 }
 
-/*
-MARK: > Media Queries
+
+/* MARK: Tablet 768px
 */
 @media (min-width: 768px) {
     .resultados-wrapper {
-        max-width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        align-items: start;
+        max-width: 700px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .resultado-item img {
+        width: auto;
+        height: 60px;
+    }
+
+    .resultado-item p {
+        max-width: 290px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.2rem;
+        margin-top: var(--spacing-xs);
+        text-align: center;
+        text-wrap: balance;
+    }
+}
+
+/* MARK: Desktop 1024px
+*/
+@media (min-width: 1024px) {
+    .resultados-wrapper {
+        max-width: 1000px;
+    }
+}
+
+/* MARK: Large 1200px
+*/
+@media (min-width: 1200px) {
+    .resultados-wrapper {
+        max-width: 1150px;
     }
 }

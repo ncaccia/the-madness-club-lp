@@ -12,23 +12,27 @@
     --color-text-lightest: #777;
 
     --color-primary-accent: #F98457;
-    /* Main orange/salmon */
     --color-primary-accent-darker: #e06040;
     --color-secondary-accent: #4383EF;
-    /* Blue for some links */
     --color-secondary-accent-darker: #3a7bc2;
-    --color-secondary-tertiary: #3C8669;
-    --color-secondary-tertiary-darker: #215943;
+    --color-tertiary-accent: #3C8669;
+    --color-tertiary-darker: #215943;
 
     --color-border: #e0e0e0;
     --color-white: #fff;
     --color-black: #000;
 
-    --container-padding-mobile: 0 15px;
+    /* Standardize breakpoints */
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+
+    /* Container padding system */
+
+    --container-padding-mobile: 15px;
     --container-padding-tablet: 30px;
     --container-padding-desktop: 40px;
     --section-padding-vertical: 20px;
-    /* Default vertical padding for sections */
 
     /* Responsive grid system variables for consistency */
     --grid-columns-mobile: 13;
@@ -40,12 +44,9 @@
     --font-size-h1: clamp(1.8rem, 4vw, 3.5rem);
     --font-size-h2: clamp(1.1rem, 2.5vw, 1.8rem);
     --font-size-h3: clamp(1.25rem, 3vw, 2rem);
+    --font-size-body: clamp(0.9rem, 2vw, 1.1rem);
+    --font-size-small: clamp(0.8rem, 1.5vw, 0.95rem);
 
-    /* Standardize breakpoints */
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1200px;
 
     /* Responsive spacing system that scales with your design */
     --spacing-xs: 0.25rem;
@@ -113,20 +114,18 @@ h6 {
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-size: var(--font-size-h1);
 }
 
-/* Base size, can be overridden per component */
 h2 {
-    font-size: 1.8rem;
-
+    font-size: var(--font-size-h2);
 }
 
 h3 {
     font-family: var(--font-secondary);
     text-align: center;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: var(--font-size-h3);
     margin-bottom: 20px;
     text-decoration: underline;
     text-decoration-thickness: 2px;
@@ -153,6 +152,7 @@ h3 {
     transition: background-color 0.3s ease;
     border: none;
     cursor: pointer;
+    font-size: var(--font-size-small);
 }
 
 .cta-button:hover {

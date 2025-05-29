@@ -40,3 +40,7 @@ Image Placeholders: I'll use placeholders for images. You'll need to replace the
 - close-menu-icon.svg
 
 
+## BUG FIXING
+
+- [] header padding on ipad or to much bottom on desktop.
+- []

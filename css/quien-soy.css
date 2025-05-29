@@ -3,20 +3,20 @@
 --------------------------------------------------------------*/
 
 .quien-soy-section {
-    padding: 20px 15px;
+    padding: var(--section-padding-vertical) 0;
     position: relative;
 }
 
 .quien-soy-container {
+    padding: 0 var(--container-padding-mobile);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .quien-soy-img {
-    margin: auto;
-    max-width: 220px;
-    display: block;
+    width: 220px;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -27,14 +27,11 @@
 }
 
 .quien-soy-text:last-child p {
-    padding-top: 15px;
+    padding: 15px 15px 0 15px;
+    text-wrap: balance;
 }
 
-.quien-soy-text>p {
-    padding-top: 15px;
-}
-
-.cta-link {
+.fullbio-link {
     padding-top: 15px;
     display: inline-block;
     color: var(--color-text);
@@ -45,17 +42,56 @@
 
 .cta-end-wrapper {
     display: flex;
-    height: 300px;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    /* padding-top: 10px; */
+    transform: translateY(-50px);
 }
 
 .cta-end-arrow {
     width: 100px;
     display: flex;
-    transform: translate(100px, -60px) rotate(-15deg);
+    transform: translate(100px) rotate(-15deg);
     align-items: center;
     justify-content: center;
 }
+
+/* MARK: Tablet 768px
+*/
+@media (min-width: 768px) {
+    .quien-soy-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .quien-soy-img {
+        width: 300px;
+        flex-shrink: 0
+    }
+
+    .quien-soy-text {
+        padding: 0 0 0 30px;
+        text-align: left;
+        width: 400px;
+    }
+
+    .quien-soy-text:last-child p {
+        padding: 0;
+        text-wrap: balance;
+    }
+
+    .cta-end-arrow {
+        transform: rotate(-15deg) translate(150px, 20px);
+    }
+
+}
+
+/* MARK: Desktop 1024px
+*/
+@media (min-width: 1024px) {}
+
+/* MARK: Large 1200px
+*/
+@media (min-width: 1200px) {}

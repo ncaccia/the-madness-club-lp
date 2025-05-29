@@ -2,13 +2,20 @@
 # Mi Metodo Section Styles
 --------------------------------------------------------------*/
 .mi-metodo-section {
-    padding: 60px var(--container-padding-mobile, 15px) 0 var(--container-padding-mobile, 15px);
+    padding: 0 var(--container-padding-mobile);
     background-color: var(--color-background);
     text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.container-metodo {
+    padding: var(--container-padding-mobile) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
 .metodo-intro {
@@ -22,8 +29,20 @@
     margin-right: auto;
 }
 
+.metodo-conclusion {
+    width: 330px;
+}
+
+.metodo-conclusion>p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.2rem;
+    margin-bottom: 5px;
+}
+
 .metodo-ilu-wrapper {
+    max-width: 345px;
     display: grid;
+    margin-bottom: 15px;
     grid-template-columns: repeat(var(--grid-columns-mobile), minmax(0, 1fr));
     grid-template-rows: repeat(24, minmax(0, 1fr));
     height: 90vh;
@@ -47,7 +66,7 @@
 }
 
 .metodo-mesa {
-    grid-area: 5 / 2 / 16 / 14;
+    grid-area: 6 / 1 / 16 / 14;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -55,7 +74,7 @@
 }
 
 .metodo-texto-3 {
-    grid-area: 16 / 4 / 19 / 13;
+    grid-area: 17 / 3 / 19 / 13;
     z-index: 10;
     text-align: right;
     text-wrap: balance;
@@ -64,7 +83,7 @@
 }
 
 .metodo-texto-4 {
-    grid-area: 20 / 2 / 24 / 13;
+    grid-area: 21 / 2 / 24 / 13;
     text-align: left;
     text-wrap: balance;
     line-height: 1.2rem;
@@ -73,7 +92,8 @@
 
 .metodo-flecha-1 {
     grid-area: 6 / 4 / 9 / 5;
-    transform: rotate(-65deg) scaleX(-1);;
+    transform: rotate(-45deg) scaleX(-1);
+    ;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -81,7 +101,7 @@
 }
 
 .metodo-flecha-2 {
-    grid-area: 14 / 12 / 16 / 13;
+    grid-area: 15 / 12 / 17 / 13;
     transform: rotate(15deg);
     z-index: 10;
     display: flex;
@@ -90,7 +110,7 @@
 }
 
 .metodo-flecha-3 {
-    grid-area: 15 / 3 / 20 / 4;
+    grid-area: 16 / 2 / 21 / 3;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -104,3 +124,77 @@
     width: 80px;
     transform: rotate(-10deg);
 }
+
+/*
+MARK: 768px tablet
+*/
+@media (min-width: 768px) {
+    .metodo-ilu-wrapper {
+        max-width: 650px;
+        display: grid;
+        margin-bottom: 15px;
+        grid-template-columns: repeat(20, minmax(0, 1fr));
+        grid-template-rows: repeat(10, minmax(0, 1fr));
+        height: 420px;
+    }
+
+    .metodo-texto-1 {
+        grid-area: 1 / 6 / 1 / 15;
+    }
+
+    .metodo-texto-2 {
+        grid-area: 2 / 1 / 4 / 7;
+    }
+
+    .metodo-mesa {
+        grid-area: 1 / 5 / 10 / 17;
+    }
+
+    .metodo-texto-3 {
+        grid-area: 3 / 16 / 19 / 21;
+    }
+
+    .metodo-texto-4 {
+        padding-top: 10px;
+        grid-area: 9 / 2 / 13 / 15;
+    }
+
+    .metodo-flecha-1 {
+        grid-area: 1 / 7 / 5 / 8;
+        padding: 5px;
+        transform: rotate(-45deg) scaleX(-1);
+    }
+
+    .metodo-flecha-2 {
+        grid-area: 9 / 13 / 10 / 14;
+        margin-top: 20px;
+        transform: rotate(50deg);
+    }
+
+    .metodo-flecha-3 {
+        grid-area: 5 / 16 / 9 / 17;
+        padding: 4px;
+        transform: rotate(200deg);
+    }
+
+    .curly-arrow-metodo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        transform: rotate(-10deg);
+    }
+
+    .metodo-conclusion {
+        margin-top: 20px;
+        width: 600px;
+        text-wrap: balance;
+    }
+}
+
+/* Desktop - 1024px and up */
+@media (min-width: 1024px) {
+}
+
+/* Large Desktop - 1200px and up */
+@media (min-width: 1200px) {}

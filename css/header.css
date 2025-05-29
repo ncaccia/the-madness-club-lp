@@ -1,40 +1,36 @@
 /*--------------------------------------------------------------
-# Header Styles
+# Header Styles - Updated
 --------------------------------------------------------------*/
 .site-header {
-    padding: 15px var(--container-padding-mobile);
-    max-width: 1140px;
-    margin: 0 auto;
+    padding: var(--section-padding-vertical) 0;
     background-color: var(--color-background);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .header-container {
+    padding: 0 var(--container-padding-mobile);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo img {
-    height: 30px;
-    /* Mobile logo height */
+    height: 28px;
 }
 
-/* Main Navigation Mobile */
 .main-nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
-    /* Full height of header */
     left: 0;
     width: 100%;
     background-color: var(--color-background);
     border-top: 1px solid var(--color-border);
-    padding: 10px 0;
+    padding: 5px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -44,7 +40,7 @@
 
 .main-nav li {
     text-align: center;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .main-nav a {
@@ -52,9 +48,8 @@
     color: var(--color-text);
     padding: 10px 15px;
     text-decoration: underline;
-    /* As per your screenshot */
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 500;
     display: block;
 }
 
@@ -63,112 +58,47 @@
     border-radius: 3px;
     padding: 5px 8px;
     display: inline-block;
-    /* To allow border to wrap tightly */
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    /* Assuming an active class might be added by JS later */
     color: var(--color-primary-accent);
 }
 
 /* Hamburger Menu Toggle */
 .nav-toggle {
     display: block;
-    /* Show hamburger on mobile */
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
     font-family: var(--font-secondary);
-    /* Match nav link font */
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 500;
     text-decoration: underline;
-    /* Match nav link style */
     color: var(--color-text);
 }
 
-/* Hide actual hamburger span if text "MENU" is used */
 .hamburger {
     display: none;
 }
 
 .nav-toggle::after {
     content: 'menu';
-    /* For the mobile design */
 }
 
 .nav-active .nav-toggle::after {
     content: 'cerrar';
 }
 
-
+/* Standardized Responsive Breakpoints */
 
 /*
-MARK: > Media Queries
+MARK: > Tablet 768px
 */
-@media (min-width: 768px) {
-    .header-container {
-        padding: 15 var(--container-padding-tablet);
-    }
+/* @media (min-width: 768px) {} */
 
-    .logo img {
-        height: 40px;
-        /* Desktop logo height */
-    }
-
-    .nav-toggle {
-        display: none;
-        /* Hide hamburger/text toggle on desktop */
-    }
-
-    .main-nav ul {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background-color: transparent;
-        border-top: none;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .main-nav li {
-        margin: 0 0 0 15px;
-        /* Spacing between desktop nav items */
-    }
-
-    .main-nav li:first-child {
-        margin-left: 0;
-    }
-
-    .main-nav a {
-        padding: 5px 0;
-        /* Adjust padding for horizontal nav */
-        display: inline;
-        /* Back to inline for desktop */
-    }
-
-    .main-nav a.lang-switcher {
-        margin-left: 20px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .header-container {
-        padding: 15px var(--container-padding-desktop);
-    }
-
-    .main-nav ul {
-        padding: 0;
-    }
-
-    .main-nav li {
-        margin: 0 0 0 20px;
-    }
-
-    .main-nav a.lang-switcher {
-        margin-left: 25px;
-    }
-}
+/*
+MARK: > Desktop 1024px
+*/
+/* @media (min-width: 1024px) {} */
