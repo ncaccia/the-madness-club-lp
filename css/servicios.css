@@ -177,6 +177,11 @@
         font-size: 1.4rem;
         padding: var(--spacing-md);
     }
+
+    .item-7>img {
+        max-height: 450px;
+        width: auto;
+    }
 }
 
 /*--------------------------------------------------------------
@@ -242,6 +247,7 @@
         font-size: 1.5rem;
         padding: var(--spacing-md);
     }
+
 }
 
 /*--------------------------------------------------------------
@@ -293,5 +299,10 @@ MARK: BIG SCREENS +1400px
     .item-8 {
         grid-area: 20 / 6 / 24 / 26;
         font-size: 1.6rem;
+    }
+
+    .item-7>img {
+        max-height: 550px;
+        width: auto;
     }
 }
